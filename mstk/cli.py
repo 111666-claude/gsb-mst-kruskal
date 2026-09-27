@@ -14,7 +14,7 @@ def build_parser():
 
 def main(argv=None):
     args = build_parser().parse_args(argv)
-    if not args.edges:
+    if args.edges is None:
         print("错误：需要 --edges", file=sys.stderr)
         return 2
     try:
